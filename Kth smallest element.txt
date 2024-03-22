@@ -1,0 +1,14 @@
+Array geeksforgeeks - 
+Kth smallest element
+
+
+class Solution{
+    public static int kthSmallest(int[] arr, int l, int r, int k) 
+    { 
+       //here first array is sort
+        Arrays.sort(arr);
+        
+        //return k-1 position of array
+        return arr[k-1];
+    } 
+}
