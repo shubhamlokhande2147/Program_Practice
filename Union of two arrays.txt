@@ -1,0 +1,22 @@
+Array geeksforgeeks - 
+Union of two arrays
+
+class Solution{
+    public static int doUnion(int a[], int n, int b[], int m) 
+    {
+        //Your code here
+        //use set , bcoz set stores unique values
+       HashSet<Integer> hset = new HashSet<Integer>();
+        
+        for(int i = 0; i < n; i++)
+         {
+             hset.add(a[i]);
+         }
+         for(int i = 0; i < m; i++)
+         {
+             hset.add(b[i]);
+         }
+       return hset.size();
+    }
+}
+
