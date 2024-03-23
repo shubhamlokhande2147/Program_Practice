@@ -1,0 +1,60 @@
+Array geeksforgeeks - 
+Move all negative elements to end
+
+class Solution {
+    
+    public void segregateElements(int arr[], int n)
+    {
+    //     // Your code goes here
+    
+    //   ArrayList<Integer> positiveList = new ArrayList<>();
+    //     ArrayList<Integer> negativeList = new ArrayList<>();
+
+    //     // Separate positive and negative elements
+    //     for (int i = 0; i < n; i++) {
+    //         if (arr[i] > 0) {
+    //             positiveList.add(arr[i]);
+    //         } else {
+    //             negativeList.add(arr[i]);
+    //         }
+    //     }
+
+    //     // Copy positive elements followed by negative elements into the original array
+    //     int i = 0;
+    //     for (int num : positiveList) {
+    //         arr[i++] = num;
+    //     }
+    //     for (int num : negativeList) {
+    //         arr[i++] = num;
+    //     }
+        
+        // positiveList.addAll(negativeList);
+        
+        // for(int i = 0; i < n; i++)
+        // {
+        //     arr[i] = positiveList.get(i); 
+        // }
+    
+      //----------------------------------------------------------------------or------------------
+        int temp[] = new int[n];
+        int j = 0; 
+        for (int i = 0; i < n; i++)
+           {
+               if (arr[i] >= 0)
+                temp[j++] = arr[i];
+           }
+ 
+        if (j == n || j == 0)
+            return;
+ 
+        for (int i = 0; i < n; i++)
+           {
+               if (arr[i] < 0)
+                temp[j++] = arr[i];
+           }
+        for (int i = 0; i < n; i++)
+           {
+               arr[i] = temp[i];
+           }
+    }
+}
