@@ -1,0 +1,45 @@
+Array geeksforgeeks Lavel 2 - 
+Find duplicates in an array
+
+class Solution {
+    public static ArrayList<Integer> duplicates(int arr[], int n) {
+        // code here
+        
+        //     ArrayList<Integer> list = new ArrayList<Integer>(); 
+    //     HashSet<Integer> set = new HashSet<>();
+
+    //   for(int i = 0; i < n; i++) {
+    //         // Check if the element is already in the set
+    //         // If it is, add it to the ArrayList
+    //         if (!set.contains(arr[i])) {
+    //             set.add(arr[i]);
+    //         } else {
+    //             // If the element is already in the set, it's a duplicate
+    //             // Add it to the ArrayList if it's not already there
+    //             if (!list.contains(arr[i])) {
+    //                 list.add(arr[i]);
+    //             }
+    //         }
+    //     }
+        
+    //     return list;
+    //------------------------------------------------------------------------
+     ArrayList<Integer> list = new ArrayList<Integer>(); 
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int i = 0; i < n; i++) {
+            // Check if the element is already in the set
+            // If it is, add it to the ArrayList
+            if (!set.contains(arr[i])) {
+                set.add(arr[i]);
+            } else {
+                // If the element is already in the set, it's a duplicate
+                // Add it to the ArrayList if it's not already there
+                if (!list.contains(arr[i])) {
+                    list.add(arr[i]);
+                }
+            }
+        }
+        return list;    
+    }
+}
