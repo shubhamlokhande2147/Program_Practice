@@ -1,0 +1,45 @@
+Array geeksforgeeks Lavel 2 - 
+Common elements
+
+class Solution
+{
+    ArrayList<Integer> commonElements(int A[], int B[], int C[], int n1, int n2, int n3) 
+    {
+        // code here 
+         ArrayList<Integer> commonElementsList = new ArrayList<>();
+        
+        // Initialize pointers for arrays A[], B[], and C[]
+        int i = 0, j = 0, k = 0;
+        
+        // Iterate through three arrays while all arrays have elements
+        while (i < n1 && j < n2 && k < n3) {
+            // If A[i], B[j], and C[k] are equal, add to commonElementsList
+            if (A[i] == B[j] && B[j] == C[k]) {
+                // If this element is not already added to commonElementsList
+                if (commonElementsList.isEmpty() || A[i] != commonElementsList.get(commonElementsList.size() - 1)) {
+                    commonElementsList.add(A[i]);
+                }
+                // Move to the next elements in all arrays
+                i++;
+                j++;
+                k++;
+            }
+            // If A[i] is smaller, move to the next element in A
+            else if (A[i] < B[j] || A[i] < C[k])
+                i++;
+            // If B[j] is smaller, move to the next element in B
+            else if (B[j] < C[k])
+                j++;
+            // If C[k] is smaller, move to the next element in C
+            else
+                k++;
+        }
+        
+        // If no common elements found, return -1
+        if (commonElementsList.isEmpty()) {
+            commonElementsList.add(-1);
+        }
+          return commonElementsList;
+    }
+}
+
