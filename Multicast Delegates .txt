@@ -1,0 +1,30 @@
+Multicast Delegates in c# - 
+
+using System;
+public delegate int mydelegate(int x, int y);
+public class HelloWorld
+{
+    public int add(int a, int b)
+    {
+        return a + b;
+    }
+     public int div(int a, int b)
+    {
+        return a / b;
+    }
+     public int mul(int a, int b)
+    {
+        return a * b;
+    }
+
+    public static void Main(string[] args)
+    {
+       // Console.WriteLine ("Try programiz.pro");
+        HelloWorld t = new HelloWorld();
+        mydelegate d = new mydelegate(t.add);
+        d += t.div;
+        d += t.mul; 
+        Console.WriteLine ("Output : " + d(2,5));
+        //o/p is 10, bcoz delegates returns value of last method, it follows FIFO order.
+    }
+}
